@@ -2,11 +2,15 @@ package tw.harry.hibernate.entity;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -79,5 +83,17 @@ public class Account {
 
 	public void setEnable(boolean enable) {
 		this.enable = enable;
+	}
+	
+	//--------------------------------------
+	@OneToOne(mappedBy = "account", cascade = CascadeType.ALL)
+	private AccountInfo accountinfo;
+
+	public AccountInfo getAccountinfo() {
+		return accountinfo;
+	}
+
+	public void setAccountinfo(AccountInfo accountinfo) {
+		this.accountinfo = accountinfo;
 	}
 }
