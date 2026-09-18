@@ -11,6 +11,9 @@
 		transaction-type="RESOURCE_LOCAL">
 		
 		<class>tw.harry.hibernate.entity.Account</class>
+		<class>tw.harry.hibernate.entity.AccountInfo</class>
+		<class>tw.harry.hibernate.entity.Order</class>
+		<class>tw.harry.hibernate.entity.OrderItem</class>
 
 		<properties>
 			<property 

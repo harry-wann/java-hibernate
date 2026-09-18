@@ -59,7 +59,7 @@ public class AccountInfo {
 	//---------------------------------------------
 	@OneToOne
 	@MapsId
-	@JoinColumn(name = "accountid")
+	@JoinColumn(name = "accountid", nullable = false, unique = true)
 	private Account account;
 
 	public Account getAccount() {
